@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='Description' content='读你，这世间唯有梦想和好姑娘不可辜负~~'>
+     <!-- <link type='image/x-icon' rel='shortcut icon' href='image/favicon.ico' /> -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+</head>
+<body>
+    <button id=""btn>点击</button>
+</body>
+<!-- <script src='https://browser.360.cn/ajax/jquery_3.4.1_jquery.min.js'></script> -->
+<script type='text/javascript'>
+    let btn = document.getElementById("btn")
+    function fn() {console.log("====")}
+    let fangdou = function (fn) {
+        let timer = null
+        return function(){
+             clearTimeout(timer)
+             timer = setTimeout(function(){
+                fn()
+            },2000)
+        }
+    }
+    let newfn = fangdou(fn) 
+    btn.onclick = function(){
+        newfn()
+    }
+</script>
+<html>
